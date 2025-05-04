@@ -7,10 +7,14 @@ nodejs v22
 typescript
 
 
-Installation: 
+Installation:
+
 cd pollingfrontend
+
 npm install
 
 Running:
+
 cd pollingfrontend 
+
 npm start
