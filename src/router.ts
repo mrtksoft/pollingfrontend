@@ -77,6 +77,8 @@ router.get("/id=:id",async (req: Request, res: Response) => {
 router.post("/vote",async (req: Request, res: Response) => {
 
     let pollId:string = req.body.pollId;
+    let clientIP = req.ip
+    console.log("ip:",clientIP)
     console.log(req.body)
     try {
         const pythonBackendUrl = "http://127.0.0.1:5002/polls/"+pollId+"/vote";
@@ -87,7 +89,8 @@ router.post("/vote",async (req: Request, res: Response) => {
             "Content-type": "application/json"
             },
             body:JSON.stringify({
-                option: req.body.option
+                option: req.body.option,
+                userIP: clientIP
             })
         });
 
