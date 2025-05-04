@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <title>Create poll</title>
+</head>
+<body>
+    <h2>Create a Poll</h2>
+    <label for="question">Poll Question:</label>
+    <input type="text" id="question" placeholder="Enter your poll question" />
+  
+    <div id="answers-container">
+      <div class="answer-input">
+        <input type="text" placeholder="Answer option" />
+        <button onclick="removeAnswer(this)">Remove</button>
+      </div>
+    </div>
+    <button onclick="addAnswer()">Add Answer</button>
+    <button onclick="createPoll()">Create Poll</button>
+  
+    <div id="poll-display"></div>
+  
+    <script>
+      function addAnswer() {
+        const container = document.getElementById('answers-container');
+        const div = document.createElement('div');
+        div.className = 'answer-input';
+        div.innerHTML = '<input type="text" placeholder="Answer option" /><button onclick="removeAnswer(this)">Remove</button>';
+        container.appendChild(div);
+      }
+  
+      function removeAnswer(button) {
+        const div = button.parentNode;
+        div.remove();
+      }
+  
+      function createPoll() {
+        const question = document.getElementById('question').value.trim();
+        const answerInputs = document.querySelectorAll('#answers-container input');
+        const answers = Array.from(answerInputs)
+                             .map(input => input.value.trim())
+                             .filter(value => value);
+  
+        if (!question || answers.length < 2) {
+          alert('Please enter a question and at least two answers.');
+          return;
+        }
+  
+        const pollDisplay = document.getElementById('poll-display');
+        pollDisplay.innerHTML = `<h3>${question}</h3><ul>${answers.map(a => `<li>${a}</li>`).join('')}</ul>`;
+        pollDisplay.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>

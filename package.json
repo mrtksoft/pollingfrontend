@@ -1,0 +1,26 @@
+{
+  "name": "voting-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc-watch --onSuccess \"nodemon dist/server.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "@types/node-fetch": "^2.6.12",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "tsc-watch": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3"
+  }
+}
