@@ -1,19 +1,19 @@
 **Frontend for the polling system**
 
-Dependencies:
+**Dependencies:**
 
 nodejs v22
 
 typescript
 
 
-Installation:
+**Installation:**
 
 cd pollingfrontend
 
 npm install
 
-Running:
+**Running:**
 
 cd pollingfrontend 
 
