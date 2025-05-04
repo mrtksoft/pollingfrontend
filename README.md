@@ -9,6 +9,9 @@ typescript
 
 **Installation:**
 
+
+git clone https://github.com/mrtksoft/pollingfrontend.git
+
 cd pollingfrontend
 
 npm install
