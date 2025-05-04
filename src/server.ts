@@ -5,7 +5,7 @@ import morgan from "morgan"
 
 
 const app: Express = express()
-const port: number = 3000
+const port: number = 80
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
